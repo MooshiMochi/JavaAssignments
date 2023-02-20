@@ -79,43 +79,29 @@ def get_user_input(prompt: str) -> Any:
 
 equations: List[Equation] = [
     Equation(
-        "E = F/q",
-        {"E": "Volts/meter (V/m)", "F": "Newtons (N)", "q": "Coulombs (C)"},
-        {"E": "F/q", "F": "E*q", "q": "F/E"},
+        "Q = CV",
+        {"Q": "Coulombs (C)", "C": "Farads (F)", "V": "Volts (V)"},
+        {"Q": "C*V", "C": "Q/V", "V": "Q/C"},
     ),
     Equation(
-        "E = V/d",
-        {"E": "Volts/meter (V/m)", "V": "Volts (V)", "d": "meters (m)"},
-        {"E": "V/d", "V": "E*d", "d": "V/E"},
+        "E = (Q²)/2C",
+        {"E": "Joules (J)", "Q": "Coulombs (C)", "C": "Farads (F)"},
+        {"E": "(Q**2)/(2*C)", "Q": "math.sqrt(2*C*E)", "C": "(Q**2)/(2*E)"},
     ),
     Equation(
-        "E = kQ/r^2",
-        {"E": "Volts/meter (V/m)", "Q": "Coulombs (C)", "r": "meters (m)"},
-        {
-            "E": "(8.99e9)*Q/r**2",
-            "Q": "E*r**2/(8.99e9)",
-            "r": "math.sqrt((8.99e9)*Q/E)",
-        },
+        "E = CV²/2",
+        {"E": "Joules (J)", "C": "Farads (F)", "V": "Volts (V)"},
+        {"E": "(C*V**2)/2", "C": "2*E/V**2", "V": "math.sqrt(2*E/C)"},
     ),
     Equation(
-        "F = kq1q2/r^2",
-        {
-            "F": "Newtons (N)",
-            "q1": "Coulombs (C)",
-            "q2": "Coulombs (C)",
-            "r": "meters (m)",
-        },
-        {
-            "F": "(8.99e9)*q1*q2/r**2",
-            "q1": "F*r**2/(8.99e9*q2)",
-            "q2": "F*r**2/(8.99e9*q1)",
-            "r": "math.sqrt((8.99e9)*q1*q2/F)",
-        },
+        "E = QV/2",
+        {"E": "Joules (J)", "Q": "Coulombs (C)", "V": "Volts (V)"},
+        {"E": "(Q*V)/2", "Q": "2*E/V", "V": "2*E/Q"},
     ),
     Equation(
-        "F = qV/d",
-        {"F": "Newtons (N)", "q": "Coulombs (C)", "V": "Volts (V)", "d": "meters (m)"},
-        {"F": "q*V/d", "q": "F*d/V", "V": "F*d/q", "d": "F*q/V"},
+        "Q = I*t",
+        {"Q": "Coulombs (C)", "I": "Amperes (A)", "t": "Seconds (s)"},
+        {"Q": "I*t", "I": "Q/t", "t": "Q/I"},
     ),
 ]
 

@@ -2,6 +2,17 @@ from math import floor, log10, sqrt
 
 GRAVITATIONAL_FIELD_CONSTANT_G = 6.67e-11
 
+"""
+Equations:
+
+R = 2GM/v²       
+
+V = sqrt(2GM/r)
+g = GM/r²
+E = -GMm/r
+F = GMm/r²
+"""
+
 
 class Answer:
     def __init__(self, answer=0):
@@ -405,9 +416,3 @@ if __name__ == "__main__":
     GRAVITATIONAL_FIELD_CONSTANT_G = 6.674e-11
 
     main(4)
-
-
-"""
-Notes:
-
-"""
